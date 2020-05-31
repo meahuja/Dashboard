@@ -1,0 +1,80 @@
+<div>
+    <div class="row" style="margin-top: 2rem;">
+      <div class="col">
+            <div class="card">
+              <div class="card-body" style="border: 1;">
+                  <strong style="color: #ff073a;">Total Cases : {{totalCount.total | number}}</strong>
+              </div>
+            </div>
+          </div>
+            <div class="col">
+            <div class="card">
+              <div class="card-body" style="border: 1;">
+                <strong style="color: #007bff;">Active Cases : {{totalCount.active | number}}</strong>
+              </div>
+            </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body" style="border: 1;">
+                  <strong style="color: #28a745;">Recovered : {{totalCount.recovered | number}}</strong>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body" style="border: 1;">
+                  <strong style="color: #6c757d;">Deaths : {{totalCount.deaths | number}}</strong>
+                </div>
+              </div>
+            </div>  
+           </div>
+</div>
+
+
+<!-- <div style="margin-top: 2rem; margin-bottom: 2rem;">
+  <h3 style="padding: 1rem;">States</h3>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let state of caseCount.data.regional">
+      <div class="card" *ngIf="state.loc.length > 0">
+        <div class="card-body">
+          <strong>{{state.loc}} - {{state.totalConfirmed | number}}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div style="margin-top: 2rem; margin-bottom: 2rem;">
+  <h3 style="padding: 1rem;">state-wise data</h3>
+  <!-- <div class="row">
+    <div class="col-sm-7" *ngFor="let st of corona">
+      <div *ngIf="st.state != 'State Unassigned'">
+          <div class="card card-body">
+            <strong>{{st.state}} - {{totalCases(st.districtData) | number}}</strong>
+          </div>
+      </div>
+    </div>
+  </div> -->
+  <table class="table table-striped table-hover table-dark fadeInUp" style="animation-delay: 1.8s;">
+    <thead>
+      <tr>
+        <th scope="col">State/UT</th>
+        <th scope="col">confirmed</th>
+        <th scope="col">active</th>
+        <th scope="col">recovered</th>
+        <th scope="col">deceased</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let st of corona">
+        <td>{{st.state}}</td>
+        <td>{{totalConfirmed(st.districtData) | number}}</td>
+        <td>{{totalActive(st.districtData) | number}}</td>
+        <td>{{totalRecovered(st.districtData) | number}}</td>
+        <td>{{totalDeceased(st.districtData) | number}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

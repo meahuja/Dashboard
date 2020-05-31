@@ -1,0 +1,16 @@
+.navbar {
+    background: #25253a;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: archia;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+    text-align: center;
+    }
+
+.navbar-brand span{
+    color: #4c75f2;
+}
